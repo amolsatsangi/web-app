@@ -5,8 +5,8 @@ class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            fisrtname: '',
-            lastname: ''
+            name: '',
+            city: ''
         };
         
 }
@@ -27,8 +27,8 @@ class Dashboard extends Component {
         firebase.database().ref('/Data').push(this.state);
         alert("Data Saved");
         this.setState({
-            fisrtname: '',
-            lastname: ''
+            name: '',
+            city: ''
         });
     }
 
@@ -41,26 +41,26 @@ class Dashboard extends Component {
                             <h3 style={{textAlign:'center'}}>Dashboard</h3>
 
                             <div className="form-group">
-                                <label style={{fontSize:'20px'}}>First Name</label>
+                                <label style={{fontSize:'20px'}}> Name</label>
                                 <input
                                     onChange={this.mychangehandle}
-                                    value={this.state.fisrtname}
+                                    value={this.state.name}
                                     type="text"
-                                    name='fisrtname'
+                                    name='name'
                                     className="form-control no-border"
-                                    placeholder="Enter First Name"
+                                    placeholder="Enter your Name"
                                     required
                                 />
                             </div>
                             <div className="form-group">
-                                <label style={{fontSize:'20px'}}>Last Name</label>
+                                <label style={{fontSize:'20px'}}>City</label>
                                 <input
                                     onChange={this.mychangehandle}
-                                    value={this.state.lastname}
+                                    value={this.state.city}
                                     type="text"
-                                    name='lastname'
+                                    name='city'
                                     className="form-control no-border"
-                                    placeholder="Enter Last Name"
+                                    placeholder="Enter your city"
                                     required
                                 />
                             </div>
@@ -81,3 +81,4 @@ class Dashboard extends Component {
 }
 
 export default Dashboard;
+
